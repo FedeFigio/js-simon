@@ -1,6 +1,6 @@
 $(document).ready(function() {
     generateNumber(numeri, 100)
-    timer()
+    timer("codio", timer)
 
 });
 
@@ -34,16 +34,20 @@ function generateNumber(array, max) {
 }
 
 // timer 30 secondi
-function timer() {
+function timer(istruzioni, callback = null) {
     var contatore = 5
     var clock = setInterval(function() {
         if (contatore == 0) {
             $(".timer").addClass("dark")
-            $(".timer").html("inserisci i numeri")
-            setTimeout(function() {
-                numeriUtenteFunc();
-            }, 1000);
+            $(".timer").html(istruzioni);
             clearInterval(clock);
+            if (callback) {
+                callback("pippo", function() {
+                    setTimeout(() => {
+                        numeriUtenteFunc()
+                    }, 200);
+                })
+            }
         } else {
             $(".timer").html(contatore)
             contatore--
@@ -57,7 +61,9 @@ function numeriUtenteFunc() {
         var userNumber = prompt("inserisci i numeri")
         numeriUtente.push(userNumber)
         console.log(numeriUtente);
-
+        $(".numeriUtente").append("<span>" + numeriUtente[i] + "</span>")
+        $(".timer").removeClass("dark")
+        $(".timer").html("quanti ne ho indovinati?");
     }
 }
 
