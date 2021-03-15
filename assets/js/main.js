@@ -5,7 +5,6 @@ $(document).ready(function() {
     timer("Tienili a mente", timer)
 
 });
-var difficolta = parseInt(prompt("con quanti numeri vuoi giocare?"))
 
 var numeri = []
 var numeriUtente = [];
@@ -25,6 +24,7 @@ function randomNumberInRange(min, max) {
 
 // funzione numeri random
 function generateNumber(array, max) {
+    var difficolta = parseInt(prompt("con quanti numeri vuoi giocare?"))
 
     for (let i = 0; i < difficolta; i++) {
         var numero = randomNumberInRange(1, max)
