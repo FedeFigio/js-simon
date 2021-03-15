@@ -1,8 +1,11 @@
 $(document).ready(function() {
+    alert("il gioco consiste nel tenere a mente i numeri e ricordarli hai 30 secondi buon game")
+
     generateNumber(numeri, 100)
-    timer("codio", timer)
+    timer("Tienili a mente", timer)
 
 });
+var difficolta = parseInt(prompt("con quanti numeri vuoi giocare?"))
 
 var numeri = []
 var numeriUtente = [];
@@ -23,7 +26,7 @@ function randomNumberInRange(min, max) {
 // funzione numeri random
 function generateNumber(array, max) {
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < difficolta; i++) {
         var numero = randomNumberInRange(1, max)
         if (!array.includes(numero)) {
             array.push(numero)
@@ -42,7 +45,7 @@ function timer(istruzioni, callback = null) {
             $(".timer").html(istruzioni);
             clearInterval(clock);
             if (callback) {
-                callback("pippo", function() {
+                callback("inserisci i numeri che ti ricordi", function() {
                     setTimeout(() => {
                         numeriUtenteFunc()
                     }, 200);
@@ -63,7 +66,7 @@ function numeriUtenteFunc() {
         console.log(numeriUtente);
         $(".numeriUtente").append("<span>" + numeriUtente[i] + "</span>")
         $(".timer").removeClass("dark")
-        $(".timer").html("quanti ne ho indovinati?");
+        $(".timer").html("quanti ne hai indovinati?");
     }
 }
 

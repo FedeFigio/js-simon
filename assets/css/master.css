@@ -15,7 +15,7 @@ body {
 .container {
     width: 70vw;
     height: 70vh;
-    background: brown;
+    background: rgb(58, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +43,7 @@ body {
 .numeriUtente {
     width: 80%;
     height: 20%;
-    background-color: blueviolet;
+    background-color: rgb(155, 155, 155);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -56,5 +56,5 @@ body {
 }
 
 .dark {
-    background-color: aqua;
+    background-color: rgb(87, 87, 87);
 }
