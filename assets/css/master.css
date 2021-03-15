@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 70vw;
+    height: 70vh;
+    background: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.timer,
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.result {
+    display: flex;
+    background: none;
+}
+
+.numeriComputer,
+.numeriUtente {
+    width: 80%;
+    height: 20%;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.active {
+    display: flex;
+}
+
+.dark {
+    background-color: aqua;
+}
